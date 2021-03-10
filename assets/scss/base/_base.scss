@@ -1,0 +1,22 @@
+@font-face {
+  font-family: Poppins;
+  src: url('../fonts/Poppins-Regular.ttf');
+}
+
+html {font-size: 65.2%;}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  overflow-x: hidden;
+  //background-color: $colorBg;
+}

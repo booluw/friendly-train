@@ -1,0 +1,29 @@
+.btn {
+  outline: none;
+  background-color: $colorBase;
+  color: $colorBg;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 300ms ease-in-out;
+
+  &--cta {
+    background-color: $colorCta;
+
+    &:hover {
+      opacity: .7;
+    }
+  }
+
+  &--secondary {
+    background-color: transparent;
+    border: .2rem solid $colorBg;
+    color: $colorBg;
+
+    &:hover {
+      background-color: $colorBg;
+      color: $colorCta;
+    }
+  }
+}

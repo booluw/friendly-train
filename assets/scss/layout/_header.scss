@@ -1,0 +1,142 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: white;
+  box-shadow: $shadow;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  overflow: hidden;
+
+  &--secondary {
+    background-color: lighten(desaturate($colorBase, 50), 30);
+    color: $colorBase;
+    position: relative;
+    justify-content: flex-end;
+    box-shadow: none;
+
+    .secondary__link {
+      color: inherit;
+      padding: .8rem 1.3rem;
+      margin-inline-start: .5rem;
+      font-size: 2rem;
+      font-weight: 900;
+      background-color: rgba(white, .5);
+      border-radius: .5rem;
+      transition: 300ms ease-in-out;
+      box-shadow: 2px 2px 1px rgba(white, .2);
+
+      &:hover:is(:not(span)) {
+        background-color: $colorBase;
+        color: rgba(white, .5);
+        box-shadow: 2px 2px 1px rgba(black, .2);
+      }
+
+      span {
+        display: none;
+        color: $colorBase;
+      }
+
+      b {
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+  &__logo {
+    width: 7rem;
+    transition: transform 300ms ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    display: flex;
+    background-color: lighten($colorBase, 10);
+    padding: 1rem;
+    font-size: 2rem;
+    margin-inline-start: 1rem;
+    border-radius: .5rem;
+    color: $colorBg;
+    transition: 300ms ease-in-out;
+
+    &:hover {
+      background-color: lighten($colorBase, 30);
+    }
+
+    &--logo {
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  &__fancy {
+    position: relative;
+    flex-basis: 80%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    &::before,
+    &::after {
+      z-index: -1;
+      position: absolute;
+      top: -100%;
+      left: 0;
+      content: "";
+      width: 120%;
+      height: 300%;
+      padding: 2rem;
+      background-color: $colorBase;
+      transform: skewX(-40deg);
+    }
+
+    &::after {
+      transform: skewX(40deg);
+    }
+  }
+}
+
+@media (min-width: 760px) {
+  .header {
+    padding: 1rem $padding--md;
+
+    &--secondary {
+      padding: 1rem $padding--md;
+
+      .secondary__link {
+        color: inherit;
+        margin-inline-start: 1.5rem;
+        display: inline-flex;
+        align-items: center;
+
+        &:hover {
+          span {
+            color: white;
+          }
+        }
+        
+        span {
+          display: block;
+          font-weight: 400;
+          font-size: 1.5rem;
+          margin-inline-start: 1rem;
+        }
+      }
+    }
+
+    &__fancy {
+      justify-content: space-between;
+      padding: 0 0 0 20%;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+.section {
+  padding: 2rem 1rem;
+}
+
+@media(min-width: 760px) {
+  .section {
+    padding: 5rem $padding--md;
+  }
+}

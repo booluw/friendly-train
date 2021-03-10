@@ -1,0 +1,55 @@
+.card {
+  background-color: white;
+  box-shadow: 0 0 70px 1px rgba(#ccc, .3);
+  padding: 3rem;
+  border-radius: 2rem;
+  height: 100%;
+
+  &--bg {
+    background: linear-gradient(rgba(black, .8), rgba(black, .8)), url('../img/jumbo.jpg');
+    color: white;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+
+    &.card--chevron,
+    &.card--belema,
+    &.card--shell,
+    &.card--new-cross,
+    &.card--nnpc,
+    &.card--delta {
+      background: linear-gradient(rgba($colorBase, .8), rgba($colorBase, .8)), url('../img/jumbo.jpg');
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+  &--small {
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+  }
+
+  &__header {
+    text-align: center;
+    margin: 0 0 3rem;
+  }
+
+  &__icon {
+    padding: 2rem;
+    background-color: rgba($colorBase, .05);
+    color: darken($colorBase, 0);
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.lni {
+      font-size: 3rem;
+    }
+  }
+
+  &__heading {
+    margin: 2rem 0 0;
+  }
+}

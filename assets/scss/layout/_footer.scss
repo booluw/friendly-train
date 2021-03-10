@@ -1,0 +1,22 @@
+.footer {
+  background-color: darken($colorBase, 60);
+  border-radius: 2rem 2rem 0 0;
+  padding: 2rem 1rem;
+  color: white;
+
+  &__link {
+    margin-inline-end: 2rem;
+    color: lighten($colorBase, 30);
+
+    &:hover {
+      opacity: .7;
+    }
+  }
+}
+
+@media(min-width: 760px) {
+  .footer {
+    padding: 3rem $padding--md 1rem;
+    border-radius: $padding--md $padding--md 0 0;
+  }
+}
