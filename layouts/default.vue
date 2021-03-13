@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="page-container">
     <div class="header header--secondary">
       <a href="tel:08035436131" class="secondary__link">
         <i class="lni lni-phone" />
@@ -17,15 +17,18 @@
     <input id="hamburger" type="checkbox">
     <header class="header">
       <nuxt-link to="/" class="header__link header__link--logo">
-        <img src="~/assets/img/logo.webp" class="header__logo" alt="Laomies Global logo">
+        <img src="~/assets/img/logo.jpg" class="header__logo" alt="Laomies Global logo">
       </nuxt-link>
       <div class="header__fancy">
         <nav class="nav">
           <nuxt-link to="/" class="nav__link" exact-active-class="nav__link--active">
             home
           </nuxt-link>
-          <nuxt-link to="/about" class="nav__link" exact-active-class="nav__link--active">
+          <nuxt-link to="/about-us" class="nav__link" exact-active-class="nav__link--active">
             about us
+          </nuxt-link>
+          <nuxt-link to="/services" class="nav__link" exact-active-class="nav__link--active">
+            services
           </nuxt-link>
           <nuxt-link to="/fleet" class="nav__link" exact-active-class="nav__link--active">
             fleet
@@ -82,6 +85,11 @@
             &copy; La'omies Limited, 2021
           </p>
         </div>
+      </div>
+      <div class="row m-0 justify-content-center">
+        <a href="//booluw.me" class="footer__attribution">
+          awesome pages by booluw
+        </a>
       </div>
     </footer>
   </section>

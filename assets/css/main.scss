@@ -2,13 +2,15 @@
         "../scss/abstract/variables";
 
 @import "../scss/base/base",
-        "../scss/base/typography";
+        "../scss/base/typography",
+        "../scss/base/utilities";
 
 @import "../scss/components/card",
         "../scss/components/hamburger",
         "../scss/components/jumbotron",
         "../scss/components/btn",
-        "../scss/components/fancy-link";
+        "../scss/components/fancy-link",
+        "../scss/components/modal";
 
 @import "../scss/layout/header",
         "../scss/layout/nav",

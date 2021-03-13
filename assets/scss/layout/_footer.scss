@@ -12,6 +12,17 @@
       opacity: .7;
     }
   }
+
+  &__attribution {
+    opacity: .6;
+    color: white;
+    transition: 300ms ease-in-out;
+    font-size: 1.3rem;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
 }
 
 @media(min-width: 760px) {

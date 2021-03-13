@@ -1,20 +1,36 @@
 .jumbotron {
   min-height: 60vh;
-  background: linear-gradient(rgba(black, .7), rgba(black, .7)), url('../img/jumbo.jpg');
-  background-position: center;
-  background-size: cover;
-  padding: 5rem 1rem;
   color: white;
 
   &__btn {
     text-transform: uppercase;
     font-size: 1.6rem;
   }
+
+  .row {
+    min-height: 60vh;
+    padding: 5rem 1rem;
+    background-image: linear-gradient(rgba(black, .7), rgba(black, .7));
+  }
+  .carousel-btns {display: none;}
 }
 
 @media(min-width: 760px) {
   .jumbotron {
     min-height: 70vh;
-    padding: 10rem $padding--md;
+
+    .row {
+      min-height: 70vh;
+      padding: 10rem $padding--md;
+      background-image: linear-gradient(rgba(black, .7), rgba(black, .7));
+      position: relative;
+    }
+
+    .carousel-btns {
+      display: flex;
+      position: absolute;
+      bottom: 10rem;
+      right: $padding--md;
+    }
   }
 }

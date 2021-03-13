@@ -1,0 +1,71 @@
+.modal {
+  background-color: white;
+  height: 90%;
+  width: 90%;
+  border-radius: 1.5rem;
+  overflow-x: hidden;
+  border-right: .2rem solid $colorCta;
+
+  &__btn {
+    position: absolute;
+    top: 1.5rem;
+    right: .5rem;
+    padding: 1rem 1.1rem;
+    border-radius: 50%;
+    z-index: 11;
+    font-size: 2rem;
+    color: $colorCta;
+    background-color: black;
+    outline: none;
+    border: .2rem solid currentColor;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+
+    &:hover {
+      background-color: $colorCta;
+      color: white;
+    }
+  }
+  
+  &-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(black, .5);
+    z-index: 10;
+    backdrop-filter: blur(10px);
+  }
+
+  &__text {
+    margin: 2rem;
+  }
+
+  &__heading {
+    &--sub {
+      font-size: 1.8rem;
+      opacity: .7;
+    }
+  }
+}
+
+@media (min-width: 760px) {
+  .modal {
+    background-color: white;
+    height: 70%;
+    max-width: 50%;
+    border-radius: 1rem;
+
+    &__btn {
+      position: absolute;
+      top: 9rem;
+      right: 23%;
+      border: .2rem solid currentColor;
+    }
+  }
+}

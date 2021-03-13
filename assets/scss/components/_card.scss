@@ -6,28 +6,74 @@
   height: 100%;
 
   &--bg {
-    background: linear-gradient(rgba(black, .8), rgba(black, .8)), url('../img/jumbo.jpg');
+    background: linear-gradient(rgba(black, .8), rgba(black, .8)), url('../img/logo.jpg');
     color: white;
     background-position: center;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     display: flex;
     align-items: flex-end;
 
-    &.card--chevron,
-    &.card--belema,
-    &.card--shell,
-    &.card--new-cross,
-    &.card--nnpc,
-    &.card--delta {
-      background: linear-gradient(rgba($colorBase, .8), rgba($colorBase, .8)), url('../img/jumbo.jpg');
+    &.card--chevron {
+      background: linear-gradient(rgba($colorBase, .8), rgba($colorBase, .8)), url('../img/Chevron.jpeg');
       background-position: center;
-      background-size: cover;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    &.card--belema {
+      background: linear-gradient(rgba($colorBase, .8), rgba($colorBase, .8)), url('../img/Belemaoil.jpeg');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    &.card--shell {
+      background: linear-gradient(rgba($colorBase, .8), rgba($colorBase, .8)), url('../img/Shell.png');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    &.card--new-cross {
+      background: linear-gradient(rgba($colorBase, .8), rgba($colorBase, .8)), url('../img/newcross.png');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    &.card--nnpc {
+      background: linear-gradient(rgba($colorBase, .8), rgba($colorBase, .8)), url('../img/NNPC.jpeg');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    &.card--delta {
+      background: linear-gradient(rgba($colorBase, .8), rgba($colorBase, .8)), url('../img/NDDC.jpeg');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
     }
   }
 
   &--small {
     padding: 1rem 2rem;
     border-radius: 1rem;
+  }
+
+  &--about {
+    text-align: center;
+    cursor: pointer;
+    padding: 0 0 2rem;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &:hover {
+      box-shadow: 0 0 10px 10px rgba(#ccc, .3);
+
+      .card__img {
+        transform: scale(1.2);
+      }
+    }
   }
 
   &__header {
@@ -51,5 +97,15 @@
 
   &__heading {
     margin: 2rem 0 0;
+    
+    &--sub {
+      opacity: .5;
+      color: $colorCta;
+    }
+  }
+
+  &__img {
+    transition: transform 300ms ease-in;
+    width: 100%;
   }
 }

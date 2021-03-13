@@ -1,9 +1,22 @@
+.page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .section {
   padding: 2rem 1rem;
+
+  &--y-small {
+    padding: 1rem;
+  }
 }
 
 @media(min-width: 760px) {
   .section {
     padding: 5rem $padding--md;
+
+    &--y-small {
+      padding: 2.5rem $padding--md;
+    }
   }
 }
