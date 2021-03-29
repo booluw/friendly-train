@@ -13,6 +13,7 @@
     background-repeat: no-repeat;
     display: flex;
     align-items: flex-end;
+    height: 15rem;
 
     &.card--chevron {
       background: linear-gradient(rgba($colorBase, .8), rgba($colorBase, .8)), url('../img/Chevron.jpeg');
@@ -62,17 +63,17 @@
     cursor: pointer;
     padding: 0 0 2rem;
     overflow: hidden;
-
+    border-radius: .5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
     &:hover {
       box-shadow: 0 0 10px 10px rgba(#ccc, .3);
+    }
 
-      .card__img {
-        transform: scale(1.2);
-      }
+    .card__heading {
+      padding: 0 1.5rem;
     }
   }
 

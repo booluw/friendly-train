@@ -1,9 +1,16 @@
 @font-face {
-  font-family: Poppins;
-  src: url('../fonts/Poppins-Regular.ttf');
+  font-family: Quicksand;
+  src: url('../fonts/Quicksand-VariableFont_wght.ttf');
+}
+@font-face {
+  font-family: Raleway;
+  src: url('../fonts/Raleway-VariableFont_wght.ttf');
 }
 
-html {font-size: 65.2%;}
+html {font-size: 55%;}
+@media (min-width: 760px) {
+  html {font-size: 65.2%;}
+}
 
 *,
 *::after,
@@ -15,8 +22,13 @@ html {font-size: 65.2%;}
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 1.8rem;
   overflow-x: hidden;
   //background-color: $colorBg;
+}
+h1, h2,
+h3, h4,
+h5, h6 {
+  font-family: 'Raleway', sans-serif;
 }

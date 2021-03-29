@@ -34,7 +34,7 @@
     <section class="section">
       <div class="row m-0">
         <div class="col-md-5 px-0 order-last order-md-first">
-          <img src="~/assets/img/Uni-assure.jpg" alt="Marine security image" class="responsive-img">
+          <img src="~/assets/img/Uni-assure.jpg" alt="Marine security image" class="responsive-img" lazy>
         </div>
         <div class="col-md-7 px-0 pl-md-5">
           <h2 class="heading heading--sub">
@@ -102,7 +102,7 @@
           </p>
         </div>
         <div class="col-md-5 p-0">
-          <img src="~/assets/img/234.jpg" alt="Marine security image" class="responsive-img">
+          <img src="~/assets/img/234.jpg" alt="Marine security image" class="responsive-img" lazy>
         </div>
       </div>
     </section>
@@ -110,7 +110,31 @@
 </template>
 
 <script>
-export default {
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+if (process.client) {
+  gsap.registerPlugin(ScrollTrigger)
+}
 
+export default {
+  head: {
+    title: "Services | La'omies Global",
+    meta: [
+      { hid: 'description', name: 'description', content: "At La'omies, We are dedicated to responding promptly to our clients with daily reports to keep them abreast with current realities on the job in procession. We strive to provide customers like you, with the best services and ensure proper security for your vessels." },
+      { hid: 'keyword', name: 'keyword', content: "La'omies, safety first, vessel safety, maritime safety" }
+    ]
+  },
+  mounted () {
+    gsap.utils.toArray('.responsive-img').forEach((el, i) => {
+      gsap.from(el, {
+        scrollTrigger: {
+          trigger: el,
+          scrub: 2
+        },
+        opacity: 0.6,
+        x: '50px'
+      })
+    })
+  }
 }
 </script>

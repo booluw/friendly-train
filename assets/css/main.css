@@ -1,10 +1,21 @@
 @font-face {
-  font-family: Poppins;
-  src: url("../fonts/Poppins-Regular.ttf");
+  font-family: Quicksand;
+  src: url("../fonts/Quicksand-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: Raleway;
+  src: url("../fonts/Raleway-VariableFont_wght.ttf");
 }
 
 html {
-  font-size: 65.2%;
+  font-size: 55%;
+}
+
+@media (min-width: 760px) {
+  html {
+    font-size: 65.2%;
+  }
 }
 
 *,
@@ -18,9 +29,15 @@ html {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 1.8rem;
   overflow-x: hidden;
+}
+
+h1, h2,
+h3, h4,
+h5, h6 {
+  font-family: 'Raleway', sans-serif;
 }
 
 .heading--page {
@@ -63,6 +80,7 @@ body {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  height: 15rem;
 }
 
 .card--bg.card--chevron {
@@ -123,6 +141,7 @@ body {
   cursor: pointer;
   padding: 0 0 2rem;
   overflow: hidden;
+  border-radius: .5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -140,9 +159,8 @@ body {
           box-shadow: 0 0 10px 10px rgba(204, 204, 204, 0.3);
 }
 
-.card--about:hover .card__img {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+.card--about .card__heading {
+  padding: 0 1.5rem;
 }
 
 .card__header {
@@ -440,6 +458,9 @@ body {
     top: 9rem;
     right: 23%;
     border: .2rem solid currentColor;
+  }
+  .modal .responsive-img {
+    border-radius: 1rem 1rem 1rem 0;
   }
 }
 

@@ -1,6 +1,6 @@
 <template>
   <main class="page">
-    <section class="jumbotron" :style="'background-image: url('+require(`~/assets/img/${currentImg}`)+');background-position: center;background-size: cover;'">
+    <section class="jumbotron" :style="'background-image: url('+require(`~/assets/img/${currentImg}`)+');background-position: center;background-size: cover;background-repeat: no-repeat;'">
       <div class="row align-items-center m-0">
         <div v-if="currentImg == 'jumbo.jpg'" class="col-md-5 p-0">
           <h1 class="heading heading--page mb-3">
@@ -10,12 +10,9 @@
             Dedicated to responding promptly to our clients with daily reports to keep them abrest with current realities on the job procession.
           </p>
           <div class="d-flex justify-content-between col-md-9 p-0">
-            <a href="#what-we-do" class="btn btn--secondary jumbotron__btn">
+            <a href="/about-us" class="btn btn--secondary jumbotron__btn">
               learn more
             </a>
-            <nuxt-link to="/contact" class="btn btn--cta jumbotron__btn">
-              get in touch
-            </nuxt-link>
           </div>
         </div>
         <div v-else-if="currentImg == 'Tokyo.jpg'" class="col-md-5 p-0">
@@ -242,6 +239,12 @@
   </main>
 </template>
 <script>
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+if (process.client) {
+  gsap.registerPlugin(ScrollTrigger)
+}
+
 export default {
   data () {
     return {
@@ -254,12 +257,89 @@ export default {
       currentIndex: 0
     }
   },
+  head () {
+    return {
+      title: "Home | La'omies Global",
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: "La'omies Global Marine Services Limited is an indegenous company, fully registered with the CAC. Our specialization is on the robust marine sector. We provide surveillance and security for multinationals. We also provide procurement, construction, installation, engineering, hiring of equipments and haulage services."
+        },
+        {
+          property: 'og:title',
+          content: "Home | La'omies Global"
+        },
+        {
+          property: 'og:description',
+          content: "La'omies Global Marine Services Limited is an indegenous company, fully registered with the CAC. Our specialization is on the robust marine sector. We provide surveillance and security for multinationals. We also provide procurement, construction, installation, engineering, hiring of equipments and haulage services."
+        },
+        {
+          property: 'og:url',
+          content: 'http://laomiesglobal.com/'
+        },
+        {
+          property: 'twitter:card',
+          content: 'summary_large_image'
+        }
+      ],
+      script: [{
+        type: 'application/ld+json',
+        json: {
+          '@context': 'https://schema.org',
+          '@type': 'Organisation',
+          name: "La'omies Global Marine Services Limited",
+          url: 'http://laomiesglobal.com',
+          legalName: "La'omies Global Marine Services Limited",
+          email: 'info@laomiesglobal.com',
+          description: '',
+          alternateName: [
+            "La'omies",
+            "La'omies Global",
+            "La'omies Global Limited"
+          ],
+          image: [
+            'https://laomiesglobal.com/logo.png'
+          ],
+          address: {
+            '@type': 'PostalAddress',
+            addressLocality: 'PortHarcourt',
+            postalCode: '',
+            streetAddress: ''
+          },
+          contactPoint: {
+            contactType: 'PR',
+            email: 'info@laomiesglobal.com',
+            telephone: '+2348035436131',
+            hoursAvaliable: [
+              'Mo-Fri 08:00-17:00'
+            ],
+            url: 'https://laomiesglobal.com/about-us'
+          },
+          founder: 'Amachree Ibinabo Sonny',
+          seeks: 'Fame'
+        }
+      }]
+    }
+  },
   computed: {
     currentImg () {
       return (this.images[Math.abs(this.currentIndex) % this.images.length])
     }
   },
-  mounted () { this.slideStart() },
+  mounted () {
+    this.slideStart()
+    gsap.utils.toArray('.card').forEach((el, i) => {
+      gsap.from(el, {
+        scrollTrigger: {
+          trigger: el,
+          scrub: i * 3
+        },
+        opacity: 0.6,
+        y: '40px'
+      })
+    })
+  },
   methods: {
     slideStart () {
       this.timer = setInterval(this.next, 9000)
